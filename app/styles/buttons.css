@@ -1,3 +1,18 @@
-.icon__button {
+.icon_button {
   @apply rounded-full hover:bg-slate-300 dark:hover:bg-zinc-700 p-2;
+}
+
+.primary_button {
+  @apply px-5 py-3 flex justify-between items-center space-x-5 w-auto
+    bg-gradient-to-r from-indigo-500 from-50% via-fuchsia-500 via-80% to-teal-500
+  hover:from-indigo-600 hover:via-fuchsia-600 hover:to-teal-600
+  text-slate-100 opacity-70;
+}
+
+.primary_icon_button {
+  @apply p-2 md:p-3  justify-between items-center space-x-5 w-auto
+  /* bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-teal-500  */
+    bg-gradient-to-r from-indigo-500 from-50% via-fuchsia-500 via-80% to-teal-500 
+  hover:from-indigo-600 hover:via-fuchsia-600 hover:to-teal-600
+  text-slate-100 opacity-70;
 }

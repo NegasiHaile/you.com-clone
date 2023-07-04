@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 200, 100, 50;
-  --background-end-rgb: 212, 137, 100;
+  --foreground-rgb: 50, 50, 50;
+  --background-start-rgb: 250, 250, 250;
+  --background-end-rgb: 250, 250, 250;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,4 +19,24 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-end-rgb));
+}
+
+/* Styles they can't be achieve using tailwind */
+
+/* hide-scrollbar is to hide the scroll bar while the scrolling feature is exist */
+.hide-scrollbar::-webkit-scrollbar {
+  /* For Webkit-based browsers (Chrome, Safari and Opera) */
+  display: none;
+}
+
+.hide-scrollbar {
+  /* For IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.hide_arrow::-webkit-outer-spin-button,
+.hide_arrow::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

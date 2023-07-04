@@ -4,6 +4,7 @@ import "./globals.css";
 import "./styles/layout.css";
 import "./styles/buttons.css";
 import { NavBar } from "@/components";
+import { usePathname, useSearchParams } from "next/navigation";
 
 export const metadata = {
   title: "You.com-clone",
@@ -15,6 +16,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+  // const searchParams = useSearchParams();
+
   let value = localStorage.getItem("mode") || "";
 
   const [darkMode, setDarkMode] = useState(() => {
@@ -29,8 +33,12 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${darkMode && "dark"} text-xs md:text-md`}>
-        <NavBar darkMode={darkMode} setDarkMode={() => {}} />
+      <body className={`${darkMode && "dark"} text-xs md:text-sm`}>
+        <NavBar
+          darkMode={darkMode}
+          setDarkMode={() => {}}
+          currentPath={pathname}
+        />
 
         {children}
       </body>

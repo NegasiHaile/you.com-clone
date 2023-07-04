@@ -91,3 +91,54 @@ export const Connects = [
     subMenu: ["A", "B", "C"],
   },
 ];
+
+export const leftNavItems = [
+  {
+    href: "/chat",
+    title: "Chat",
+    icon: icons.chat,
+  },
+  {
+    href: "/all",
+    title: "All",
+    icon: icons.search,
+  },
+  {
+    href: "/images",
+    title: "Images",
+    icon: icons.image,
+  },
+  {
+    href: "/videos",
+    title: "Videos",
+    icon: icons.video,
+  },
+  {
+    href: "/news",
+    title: "News",
+    icon: icons.news,
+  },
+  {
+    href: "/maps",
+    title: "Maps",
+    icon: icons.map,
+  },
+  {
+    href: "/social",
+    title: "Social",
+    icon: icons.users,
+  },
+];
+
+export const rightNavItems = [
+  {
+    href: "/join",
+    title: "Join",
+    icon: icons.search,
+  },
+  {
+    href: "https://chrome.google.com/webstore/detail/youcom-search-chat-and-cr/fhplnehgjpmohhldfnjhibanpbiedofi",
+    title: "Install",
+    icon: icons.chat,
+  },
+];
