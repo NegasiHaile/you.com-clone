@@ -1,4 +1,4 @@
-import { Box, Icon } from "../Utils";
+import { Icon } from "../Utils";
 import Link from "next/link";
 
 export interface NavItemProps {
@@ -7,6 +7,7 @@ export interface NavItemProps {
   icon?: string;
   className?: string;
   onClick?: any;
+  navItemStyle?: string;
 }
 
 const NavItem = ({
@@ -15,17 +16,16 @@ const NavItem = ({
   icon,
   className,
   onClick,
+  navItemStyle,
   ...others
 }: NavItemProps) => {
   return (
-    <Link href={href} onClick={onClick}>
-      <Box
-        className={`flex items-center text-sm space-x-1 font-semibold hover:text-blue-500 pb-1 ${className}`}
-        {...others}
-      >
+    <Link href={href} onClick={onClick} className={` ${className}`}>
+      <div className={`nav_item nav_text`} {...others}>
         {icon ? <Icon name={icon} /> : ""}
         <span>{title}</span>
-      </Box>
+      </div>
+      <div className={`nav_border`}> </div>
     </Link>
   );
 };

@@ -1,5 +1,5 @@
 .header__container {
-  @apply h-28 md:h-20 block md:flex items-center m-0 px-2 md:px-8 py-5 w-full shadow-md shadow-gray-600 sticky top-0 z-40 bg-inherit;
+  @apply h-28 md:h-[85px] block md:flex justify-between items-center px-2 md:px-8 py-3 w-full shadow-md dark:shadow-zinc-900 sticky top-0 z-40 bg-inherit;
 }
 
 .header_left_content {
@@ -8,4 +8,28 @@
 
 .header_left_mobile {
   @apply flex md:hidden items-center space-x-1;
+}
+
+.header_center_contents {
+  @apply flex w-full md:pl-[20px] space-x-6 overflow-auto mt-4 mb-1 md:mt-1 md:ml-16;
+}
+
+.nav_item {
+  @apply flex justify-around items-center text-opacity-50 text-sm space-x-1 font-semibold hover:text-blue-500 mb-1;
+}
+
+.active_navitem .nav_text {
+  @apply text-blue-500 text-opacity-100;
+}
+
+.normal_nav .nav_border {
+  @apply border-b-4 border-transparent rounded-full;
+}
+
+.active_navitem .nav_border {
+  @apply border-b-4 border-blue-500 rounded-full;
+}
+
+.header_right_content {
+  @apply hidden md:flex space-x-6 items-center w-auto;
 }

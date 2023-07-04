@@ -10,7 +10,7 @@ const IconButton = ({
   iconStyle,
 }: IconButtonProps) => {
   return (
-    <button className={`icon__button ${className}`} onClick={onClick}>
+    <button className={`icon_button { ${className}`} onClick={onClick}>
       <Icon name={iconName} className={iconStyle ?? "w-6 h-6"} />
     </button>
   );
