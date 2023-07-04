@@ -1,0 +1,11 @@
+.header__container {
+  @apply h-28 md:h-20 block md:flex items-center m-0 px-2 md:px-8 py-5 w-full shadow-md shadow-gray-600 sticky top-0 z-40 bg-inherit;
+}
+
+.header_left_content {
+  @apply w-full md:w-auto flex justify-between items-center;
+}
+
+.header_left_mobile {
+  @apply flex md:hidden items-center space-x-1;
+}
