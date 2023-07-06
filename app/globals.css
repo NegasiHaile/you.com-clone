@@ -3,22 +3,25 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 50, 50, 50;
-  --background-start-rgb: 250, 250, 250;
-  --background-end-rgb: 250, 250, 250;
+  --foreground-light: 100, 100, 100;
+  --background-light: 250, 250, 250;
+
+  --foreground-dark: 210, 210, 210;
+  --background-dark: 33, 32, 37;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 230, 230, 230;
-    --background-start-rgb: 33, 32, 37;
-    --background-end-rgb: 33, 32, 37;
-  }
+.light {
+  color: rgb(var(--foreground-light));
+  background: rgb(var(--background-light));
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-end-rgb));
+.dark {
+  color: rgb(var(--foreground-dark));
+  background: rgb(var(--background-dark));
+}
+
+.dark-bg {
+  background: rgb(var(--background-dark));
 }
 
 /* Styles they can't be achieve using tailwind */

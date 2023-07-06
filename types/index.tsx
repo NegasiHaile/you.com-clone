@@ -1,6 +1,11 @@
 export interface DarkModeTypes {
-  darkMode: boolean;
-  setDarkMode: () => void;
+  darkMode?: boolean;
+  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface SidebarTypes {
+  showSidebar?: boolean;
+  setShowSidebar: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface IconProps {

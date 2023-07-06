@@ -1,5 +1,9 @@
 .header__container {
-  @apply h-28 md:h-[85px] block md:flex justify-between items-center px-2 md:px-8 py-3 w-full shadow-md dark:shadow-zinc-900 sticky top-0 z-40 bg-inherit;
+  @apply h-28 md:h-[85px] block md:flex justify-between items-center px-2 md:px-8 py-3 w-full shadow-md shadow-slate-200 dark:shadow-zinc-900 sticky top-0 z-40 bg-inherit;
+}
+
+.navbar_logo {
+  @apply mr-3 w-[90px] h-[40px] md:w-[160px] md:h-[70px];
 }
 
 .header_left_content {
@@ -11,7 +15,7 @@
 }
 
 .header_center_contents {
-  @apply flex w-full md:pl-[20px] space-x-6 overflow-auto mt-4 mb-1 md:mt-1 md:ml-16;
+  @apply flex justify-start w-full md:pl-[20px] space-x-6 overflow-auto mt-4 mb-1 md:mt-1 md:ml-16;
 }
 
 .nav_item {
@@ -32,4 +36,16 @@
 
 .header_right_content {
   @apply hidden md:flex space-x-6 items-center w-auto;
+}
+
+.setting_container {
+  @apply absolute rounded-xl  shadow-md bg-white dark:bg-zinc-800 ring-opacity-5 right-0 z-10 mt-0 w-[330px] origin-top-right py-3 px-1 overflow-auto;
+}
+
+.setting_mobile_wrapper {
+  @apply fixed top-0 left-0 z-50 w-[330px] h-screen transition-transform shadow-md;
+}
+
+.setting_mobile_container {
+  @apply h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-zinc-800;
 }
