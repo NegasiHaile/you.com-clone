@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -23,6 +23,27 @@ type NavBarProps = DarkModeTypes & { currentPath: string };
 
 const NavBar = ({ darkMode, setDarkMode, currentPath }: NavBarProps) => {
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
+
+  const settingDropdownRef = useRef<HTMLDivElement>(null);
+  const settingSideBarRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!showSidebar) return;
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        settingDropdownRef.current &&
+        !settingDropdownRef.current.contains(event.target as Node) &&
+        settingSideBarRef.current &&
+        !settingSideBarRef.current.contains(event.target as Node)
+      ) {
+        setShowSidebar(false);
+      }
+    }
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [showSidebar]);
 
   return (
     <header className="h-28 md:h-[85px] block md:flex justify-between items-center px-2 md:px-8 py-3 w-full shadow-md   sticky top-0 z-40 bg-inherit">
@@ -79,12 +100,12 @@ const NavBar = ({ darkMode, setDarkMode, currentPath }: NavBarProps) => {
             />
           );
         })}
-        {/* <Button
+        <Button
           onClick={() => alert("done!")}
           className="primary_button rounded-full whitespace-nowrap font-bold"
         >
           Sign In
-        </Button> */}
+        </Button>
         <div className="relative inline-block text-left">
           <Button
             className="primary_icon_button rounded-full flex"
@@ -99,7 +120,7 @@ const NavBar = ({ darkMode, setDarkMode, currentPath }: NavBarProps) => {
           {/* SETTING-BAR on large screens */}
           {showSidebar && (
             <>
-              <div className={`setting_container`}>
+              <div ref={settingDropdownRef} className={`setting_container`}>
                 <SettingLists setDarkMode={setDarkMode} />
               </div>
             </>
@@ -109,6 +130,7 @@ const NavBar = ({ darkMode, setDarkMode, currentPath }: NavBarProps) => {
 
       {/* SETTING-BAR on mobile */}
       <aside
+        ref={settingSideBarRef}
         id="default-sidebar"
         className={`setting_mobile_wrapper ${
           showSidebar ? "" : "-translate-x-full"

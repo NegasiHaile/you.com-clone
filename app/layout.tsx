@@ -38,7 +38,11 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${darkMode ? "dark" : "light"} text-xs md:text-md`}>
+      <body
+        className={`${inter.className} ${
+          darkMode ? "dark" : "light"
+        } text-xs md:text-md`}
+      >
         {/* Top navigation bar */}
         <NavBar
           darkMode={darkMode}
