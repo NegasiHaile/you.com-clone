@@ -3,6 +3,9 @@ import { useState } from "react";
 import "./globals.css";
 import "./styles/layout.css";
 import "./styles/buttons.css";
+
+import { Inter } from "next/font/google";
+
 import { NavBar } from "@/components";
 import { usePathname, useSearchParams } from "next/navigation";
 
@@ -10,6 +13,8 @@ export const metadata = {
   title: "You.com-clone",
   description: "This is the You.com clone using NextJS-13, By Negasi",
 };
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -33,14 +38,16 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${darkMode && "dark"} text-xs md:text-sm`}>
+      <body className={`${darkMode ? "dark" : "light"} text-xs md:text-md`}>
+        {/* Top navigation bar */}
         <NavBar
           darkMode={darkMode}
-          setDarkMode={() => {}}
+          setDarkMode={setDarkMode}
           currentPath={pathname}
         />
 
-        {children}
+        {/* Main content */}
+        <main className="mx-3 md:mx-8">{children}</main>
       </body>
     </html>
   );
