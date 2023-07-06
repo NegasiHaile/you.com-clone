@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import Link from "next/link";
-import Image from "next/image";
 
 // assets
 import { icons } from "@/assets/icons";
@@ -121,7 +120,7 @@ const NavBar = ({ darkMode, setDarkMode, currentPath }: NavBarProps) => {
           {showSidebar && (
             <>
               <div ref={settingDropdownRef} className={`setting_container`}>
-                <SettingLists setDarkMode={setDarkMode} />
+                <SettingLists darkMode={darkMode} setDarkMode={setDarkMode} />
               </div>
             </>
           )}
@@ -137,7 +136,7 @@ const NavBar = ({ darkMode, setDarkMode, currentPath }: NavBarProps) => {
         } md:-translate-x-full`}
       >
         <div className="setting_mobile_container">
-          <SettingLists setDarkMode={setDarkMode} />
+          <SettingLists darkMode={darkMode} setDarkMode={setDarkMode} />
         </div>
       </aside>
     </header>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../Buttons/Button";
 import { Icon } from "../Utils";
 
@@ -8,7 +8,19 @@ import { icons } from "@/assets/icons";
 import Link from "next/link";
 import { DarkModeTypes } from "@/types";
 
-export const SettingLists = ({ setDarkMode }: DarkModeTypes) => {
+export const SettingLists = ({ darkMode, setDarkMode }: DarkModeTypes) => {
+  const [mode, setMode] = useState("");
+
+  useEffect(() => {
+    const mode = localStorage.getItem("mode") || "system";
+    setMode(mode);
+  });
+
+  const btn = {
+    activeBorder: "border-blue-500 box-border",
+    normalBorder: "border-slate-200 dark:border-zinc-700",
+  };
+
   const appearanceButtons = [
     {
       name: "System",
@@ -19,7 +31,9 @@ export const SettingLists = ({ setDarkMode }: DarkModeTypes) => {
           setDarkMode(
             window.matchMedia("(prefers-color-scheme: dark)").matches
           );
+        setMode("system");
       },
+      modeStyle: mode === "system" ? btn.activeBorder : btn.normalBorder,
     },
     {
       name: "Light",
@@ -27,7 +41,9 @@ export const SettingLists = ({ setDarkMode }: DarkModeTypes) => {
       onClick: () => {
         localStorage.setItem("mode", "light");
         setDarkMode && setDarkMode(false);
+        setMode("light");
       },
+      modeStyle: mode === "light" ? btn.activeBorder : btn.normalBorder,
     },
     {
       name: "Dark",
@@ -35,14 +51,19 @@ export const SettingLists = ({ setDarkMode }: DarkModeTypes) => {
       onClick: () => {
         localStorage.setItem("mode", "dark");
         setDarkMode && setDarkMode(true);
+        setMode("dark");
       },
+      modeStyle: mode === "dark" ? btn.activeBorder : btn.normalBorder,
     },
   ];
 
   return (
     <>
       <div className="px-2">
-        <Button onClick={() => {}} className="appearance_button ">
+        <Button
+          onClick={() => {}}
+          className="appearance_button border-slate-200 dark:border-zinc-700"
+        >
           Sign In
         </Button>
 
@@ -54,7 +75,7 @@ export const SettingLists = ({ setDarkMode }: DarkModeTypes) => {
               return (
                 <button
                   key={index}
-                  className="appearance_button"
+                  className={`appearance_button ${item.modeStyle}`}
                   onClick={item.onClick}
                 >
                   <Icon className="w-3 h-3 md:w-4 md:h-4" name={item.icon} />
