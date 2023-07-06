@@ -61,10 +61,10 @@ export const SettingLists = ({ darkMode, setDarkMode }: DarkModeTypes) => {
     <>
       <div className="px-2">
         <Button
-          onClick={() => {}}
+          onClick={() => alert("Sign up is component comming soon!")}
           className="appearance_button border-slate-200 dark:border-zinc-700"
         >
-          Sign In
+          Sign Up
         </Button>
 
         {/* Appearance */}

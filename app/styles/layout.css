@@ -39,7 +39,7 @@
 }
 
 .setting_container {
-  @apply absolute rounded-b-2xl rounded-tl-2xl rounded-tr-md  shadow-md bg-white dark:bg-zinc-800 ring-opacity-5 right-5 z-10 mt-0 w-[330px] origin-top-right py-3 px-1 overflow-auto;
+  @apply absolute rounded-xl  shadow-md bg-white dark:bg-zinc-800 ring-opacity-5 right-0 z-10 mt-0 w-[330px] origin-top-right py-3 px-1 overflow-auto;
 }
 
 .setting_mobile_wrapper {

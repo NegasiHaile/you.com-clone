@@ -59,15 +59,25 @@ const NavBar = ({ darkMode, setDarkMode, currentPath }: NavBarProps) => {
         <Link href="/">
           <img src="/you-logo.svg" alt="You Logo" className="navbar_logo" />
         </Link>
-        <Button
-          className="primary_icon_button rounded-full flex md:hidden"
-          onClick={() => setShowSidebar(!showSidebar)}
-        >
-          <Icon
-            name={showSidebar ? icons.close : icons.settings}
-            className={"w-5 h-5"}
-          />
-        </Button>
+
+        <div className="flex space-x-1 md:hidden">
+          <Button
+            onClick={() => alert("Sign in is component comming soon!")}
+            className="primary_button rounded-full flex "
+          >
+            Sign In
+          </Button>
+
+          <Button
+            className="primary_icon_button rounded-full flex"
+            onClick={() => setShowSidebar(!showSidebar)}
+          >
+            <Icon
+              name={showSidebar ? icons.close : icons.settings}
+              className={"w-4 h-4"}
+            />
+          </Button>
+        </div>
       </div>
 
       {/* Center side elements */}
@@ -100,8 +110,8 @@ const NavBar = ({ darkMode, setDarkMode, currentPath }: NavBarProps) => {
           );
         })}
         <Button
-          onClick={() => alert("done!")}
-          className="primary_button rounded-full whitespace-nowrap font-bold"
+          onClick={() => alert("Sign in is component comming soon!")}
+          className="primary_button rounded-full font-bold"
         >
           Sign In
         </Button>

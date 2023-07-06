@@ -3,14 +3,14 @@
 }
 
 .primary_button {
-  @apply px-9 py-3 flex justify-between items-center space-x-5 w-auto
+  @apply px-5 md:px-9 py-1.5 md:py-3 flex justify-between items-center space-x-5 w-auto
     bg-gradient-to-r from-indigo-500 from-50% via-fuchsia-500 via-80% to-teal-500
   hover:from-indigo-600 hover:via-fuchsia-600 hover:to-teal-600
-  text-slate-100 opacity-70;
+  text-slate-100 opacity-70 whitespace-nowrap;
 }
 
 .primary_icon_button {
-  @apply p-2 md:p-3  justify-between items-center space-x-5 w-auto
+  @apply p-1.5 md:p-3 flex justify-center items-center space-x-5 w-auto
   /* bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-teal-500  */
     bg-gradient-to-r from-indigo-500 from-50% via-fuchsia-500 via-80% to-teal-500 
   hover:from-indigo-600 hover:via-fuchsia-600 hover:to-teal-600
