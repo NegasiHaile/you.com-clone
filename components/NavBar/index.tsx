@@ -17,12 +17,15 @@ import NavItem from "./NavItem";
 import { IconButton } from "../";
 import { Button } from "../";
 import { Icon } from "../Utils";
+import { SettingLists } from "./SettingList";
 
 type NavBarProps = DarkModeTypes & { currentPath: string };
 
 const NavBar = ({ darkMode, setDarkMode, currentPath }: NavBarProps) => {
+  const [showSidebar, setShowSidebar] = useState<boolean>(false);
+
   return (
-    <header className="header__container">
+    <header className="h-28 md:h-[85px] block md:flex justify-between items-center px-2 md:px-8 py-3 w-full shadow-md   sticky top-0 z-40 bg-inherit">
       {/* Left part nav items */}
       <div className="header_left_content">
         <div className="header_left_mobile">
@@ -34,17 +37,16 @@ const NavBar = ({ darkMode, setDarkMode, currentPath }: NavBarProps) => {
           />
         </div>
         <Link href="/">
-          <img
-            src="/you-logo.svg"
-            alt="You Logo"
-            className="mr-3 w-[90px] h-[40px] md:w-[160px] md:h-[70px]"
-          />
+          <img src="/you-logo.svg" alt="You Logo" className="navbar_logo" />
         </Link>
         <Button
           className="primary_icon_button rounded-full flex md:hidden"
-          onClick={() => {}}
+          onClick={() => setShowSidebar(!showSidebar)}
         >
-          <Icon name={icons.settings} className={"w-5 h-5 md:w-6 md:h-6"} />
+          <Icon
+            name={showSidebar ? icons.close : icons.settings}
+            className={"w-5 h-5"}
+          />
         </Button>
       </div>
 
@@ -60,9 +62,6 @@ const NavBar = ({ darkMode, setDarkMode, currentPath }: NavBarProps) => {
               className={
                 currentPath === item.href ? "active_navitem" : "normal_nav"
               }
-              // navItemStyle={
-              //   currentPath === item.href ? "active_navitem rounded-full" : ""
-              // }
             />
           );
         })}
@@ -80,24 +79,45 @@ const NavBar = ({ darkMode, setDarkMode, currentPath }: NavBarProps) => {
             />
           );
         })}
-
-        <Button
+        {/* <Button
           onClick={() => alert("done!")}
-          className="primary_button rounded-3xl whitespace-nowrap"
+          className="primary_button rounded-full whitespace-nowrap font-bold"
         >
           Sign In
-        </Button>
-
-        {/* Right side elements */}
+        </Button> */}
         <div className="relative inline-block text-left">
           <Button
             className="primary_icon_button rounded-full flex"
-            onClick={() => {}}
+            onClick={() => setShowSidebar(!showSidebar)}
           >
-            <Icon name={icons.settings} className={"w-6 h-6"} />
+            <Icon
+              name={showSidebar ? icons.close : icons.settings}
+              className={"w-6 h-6"}
+            />
           </Button>
+
+          {/* SETTING-BAR on large screens */}
+          {showSidebar && (
+            <>
+              <div className={`setting_container`}>
+                <SettingLists setDarkMode={setDarkMode} />
+              </div>
+            </>
+          )}
         </div>
       </div>
+
+      {/* SETTING-BAR on mobile */}
+      <aside
+        id="default-sidebar"
+        className={`setting_mobile_wrapper ${
+          showSidebar ? "" : "-translate-x-full"
+        } md:-translate-x-full`}
+      >
+        <div className="setting_mobile_container">
+          <SettingLists setDarkMode={setDarkMode} />
+        </div>
+      </aside>
     </header>
   );
 };

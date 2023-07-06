@@ -3,7 +3,7 @@
 }
 
 .primary_button {
-  @apply px-5 py-3 flex justify-between items-center space-x-5 w-auto
+  @apply px-9 py-3 flex justify-between items-center space-x-5 w-auto
     bg-gradient-to-r from-indigo-500 from-50% via-fuchsia-500 via-80% to-teal-500
   hover:from-indigo-600 hover:via-fuchsia-600 hover:to-teal-600
   text-slate-100 opacity-70;
@@ -15,4 +15,10 @@
     bg-gradient-to-r from-indigo-500 from-50% via-fuchsia-500 via-80% to-teal-500 
   hover:from-indigo-600 hover:via-fuchsia-600 hover:to-teal-600
   text-slate-100 opacity-70;
+}
+
+.appearance_button {
+  @apply flex justify-center p-2 items-center rounded-3xl text-zinc-600 space-x-1 w-full bg-inherit border 
+                  border-slate-200 hover:bg-slate-200 font-normal dark:text-zinc-400 
+                  dark:border-zinc-700 dark:hover:bg-zinc-700 text-xs md:text-sm;
 }
