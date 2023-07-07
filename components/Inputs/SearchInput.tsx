@@ -1,9 +1,8 @@
 "use client";
-import React, { useRef, useEffect, useState, ChangeEvent } from "react";
+import React, { useRef, useState, ChangeEvent } from "react";
 
 import { SearchInputProps } from "@/types";
 import { Icon } from "../Utils";
-import { icons } from "@/assets/icons";
 
 type InputProps = SearchInputProps & {
   inputValue: string;
@@ -39,7 +38,7 @@ const SearchInput = ({
         ref={textareaRef}
         id="chat"
         rows={numLines <= 5 ? numLines : 5}
-        className="search_input resize-none no-scrollbar pr-12"
+        className="input rounded-3xl resize-none no-scrollbar pr-12"
         placeholder="Start typing to search"
         required
         value={inputValue}
@@ -55,7 +54,7 @@ const SearchInput = ({
       {/* <textarea className="resize-none w-full h-40 p-2 border-4 border-red-500 focus:border-blue-800 focus:outline-none"></textarea> */}
 
       <button
-        className={`search_input_end_button ${
+        className={`input_end_button ${
           inputValue ? "active_button" : "disabled_button"
         } ${iconContainerStyle}`}
         onClick={!!inputValue ? onClickSendButton : () => {}}

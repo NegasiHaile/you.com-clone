@@ -1,0 +1,21 @@
+.hero_section {
+  @apply h-[calc(100vh_-_7rem)] md:h-[calc(100vh_-_85px)] flex flex-col items-center pt-32 w-full;
+}
+
+.landing_header {
+  @apply font-bold text-zinc-700 dark:text-slate-200;
+}
+
+.reason_section {
+  @apply block sm:flex justify-between space-y-8 sm:space-y-0 sm:space-x-5 md:space-x-10 mt-5 w-full;
+}
+
+.reason_card {
+  @apply w-full h-auto flex flex-col items-center pt-6 border dark:border-0 dark:bg-zinc-900 overflow-hidden rounded-2xl dark:shadow-xl;
+}
+
+.reason_description {
+  @apply text-[17px] w-full text-center mt-1 px-4;
+  line-height: 1.3rem /* 28px */;
+  font-weight: 500;
+}
