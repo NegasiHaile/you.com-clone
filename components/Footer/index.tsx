@@ -37,7 +37,9 @@ const Footer = () => {
 
       <div className="flex flex-col py-5 sm:pt-0 sm:mt-0 border-t sm:border-t-0 sm:border-l dark:border-zinc-700 sm:pl-10 pr-2 items-center sm:items-start">
         <p className=" landing_header text-sm"> Subscribe to our newsletter </p>
-        <p className="">Get latest news and updates about you.com</p>
+        <p className="text-zinc-400">
+          Get latest news and updates about you.com
+        </p>
         <form
           className="flex space-x-2 mt-5"
           onSubmit={(e) => {

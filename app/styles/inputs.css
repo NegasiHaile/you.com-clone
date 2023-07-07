@@ -1,5 +1,5 @@
 .input {
-  @apply block w-full py-4 px-6 text-sm border dark:border-zinc-700
+  @apply block w-full py-4 px-6 text-sm border border-slate-300 dark:border-zinc-700
               dark:bg-zinc-800 focus:border-blue-500 dark:focus:border-blue-500
              dark:focus:shadow-lg placeholder:text-zinc-300
              placeholder:dark:text-zinc-600 focus:outline-none;

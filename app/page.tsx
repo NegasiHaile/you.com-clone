@@ -25,18 +25,15 @@ export default function Home() {
                 className="w-8 h-8"
               />
 
-              <p className="landing_header text-[22px] mt-6">{item.title}</p>
+              <p className="landing_header text-[22px] mt-8">{item.title}</p>
 
-              <p className="reason_description pt-2">{item.description}</p>
+              <p className="reason_description pt-3">{item.description}</p>
               <div className=" flex-grow" />
 
-              <Image
+              <img
                 src={item.imageSrc}
                 alt={item.title}
-                width={300}
-                height={200}
-                priority
-                className="w-full max-h-[250px] min-h-[100px] mt-3"
+                className="w-full max-h-[250px] min-h-[100px] mt-5"
               />
             </div>
           ))}

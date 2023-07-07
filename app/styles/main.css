@@ -7,11 +7,11 @@
 }
 
 .reason_section {
-  @apply block sm:flex justify-between space-y-8 sm:space-y-0 sm:space-x-5 md:space-x-10 mt-5 w-full;
+  @apply block sm:flex justify-between space-y-6 sm:space-y-0 sm:space-x-5 md:space-x-8 mt-5 w-full;
 }
 
 .reason_card {
-  @apply w-full h-auto flex flex-col items-center pt-6 border dark:border-0 dark:bg-zinc-900 overflow-hidden rounded-2xl dark:shadow-xl;
+  @apply w-full h-auto flex flex-col items-center pt-6 border dark:border-0 dark:bg-zinc-900/50 overflow-hidden rounded-2xl dark:shadow-xl;
 }
 
 .reason_description {

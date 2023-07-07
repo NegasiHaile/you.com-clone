@@ -37,7 +37,7 @@ const Hero = () => {
 
       <div className="flex flex-col items-center">
         <Link href={"#why-you"}>
-          <Icon name={icons.downward} className="w-20 h-20" strokeWidth={1} />
+          <Icon name={icons.downward} className="w-20 h-20" strokeWidth={1.3} />
         </Link>
       </div>
     </div>

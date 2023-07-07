@@ -53,7 +53,7 @@ export default function RootLayout({
         />
 
         {/* Main content */}
-        <main className="mx-4 md:mx-8">{children}</main>
+        <main className="mx-4 md:mx-16">{children}</main>
 
         {/* Footer */}
         {pathname !== "/chat" && <Footer />}
