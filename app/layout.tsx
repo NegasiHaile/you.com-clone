@@ -3,10 +3,12 @@ import { useState } from "react";
 import "./globals.css";
 import "./styles/layout.css";
 import "./styles/buttons.css";
+import "./styles/inputs.css";
+import "./styles/main.css";
 
 import { Inter } from "next/font/google";
 
-import { NavBar } from "@/components";
+import { Footer, NavBar } from "@/components";
 import { usePathname, useSearchParams } from "next/navigation";
 
 export const metadata = {
@@ -51,7 +53,10 @@ export default function RootLayout({
         />
 
         {/* Main content */}
-        <main className="mx-3 md:mx-8">{children}</main>
+        <main className="mx-4 md:mx-8">{children}</main>
+
+        {/* Footer */}
+        {pathname !== "/chat" && <Footer />}
       </body>
     </html>
   );
