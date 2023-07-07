@@ -1,0 +1,18 @@
+.input {
+  @apply block w-full py-4 px-6 text-sm border border-slate-300 dark:border-zinc-700
+              dark:bg-zinc-800 focus:border-blue-500 dark:focus:border-blue-500
+             dark:focus:shadow-lg placeholder:text-zinc-300
+             placeholder:dark:text-zinc-600 focus:outline-none;
+}
+
+.input_end_button {
+  @apply absolute inset-y-0 right-0 h-8 flex flex-col items-center justify-center px-2 my-3 mr-1 rounded-full;
+}
+
+.active_button {
+  @apply bg-blue-500 text-slate-200 cursor-pointer dark:text-gray-300 hover:bg-blue-600;
+}
+
+.disabled_button {
+  @apply dark:text-gray-700 text-gray-300 pointer-events-none;
+}

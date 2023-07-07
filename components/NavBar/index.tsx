@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useRef, useState } from "react";
 
 import Link from "next/link";
@@ -45,7 +46,7 @@ const NavBar = ({ darkMode, setDarkMode, currentPath }: NavBarProps) => {
   }, [showSidebar]);
 
   return (
-    <header className="h-28 md:h-[85px] block md:flex justify-between items-center px-2 md:px-8 py-3 w-full shadow-md   sticky top-0 z-40 bg-inherit">
+    <header className="header__container">
       {/* Left part nav items */}
       <div className="header_left_content">
         <div className="header_left_mobile">

@@ -11,8 +11,8 @@ const Icon = ({
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill={outline ? "filled" : "none"}
-      viewBox={viewBox ? viewBox : "0 0 24 24"}
-      strokeWidth={strokeWidth ? strokeWidth : 2.5}
+      viewBox={viewBox ?? "0 0 24 24"}
+      strokeWidth={strokeWidth ?? 2.5}
       stroke="currentColor"
       className={` ${className ?? "w-4 h-4"}`}
     >
