@@ -7,7 +7,7 @@ import { reasonsToUseYou } from "@/constants";
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="md:mx-8">
       {/* HERO section */}
       <Hero />
       {/* Why You.com? */}

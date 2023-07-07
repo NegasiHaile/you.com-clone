@@ -23,7 +23,7 @@ const Hero = () => {
       <h1 className="text-xl md:text-3xl my-5 text-center">
         The AI search engine you control
       </h1>
-      <div className="w-full md:w-1/2 mt-5">
+      <div className="w-full md:w-4/6 lg:w-1/2 mt-5">
         <SearchInput
           inputValue={inputValue}
           setInputValue={setInputValue}
