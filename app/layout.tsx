@@ -5,11 +5,12 @@ import "./styles/layout.css";
 import "./styles/buttons.css";
 import "./styles/inputs.css";
 import "./styles/main.css";
+import "./styles/chat-page.css";
 
 import { Inter } from "next/font/google";
 
 import { Footer, NavBar } from "@/components";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 export const metadata = {
   title: "You.com-clone",
@@ -24,7 +25,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  // const searchParams = useSearchParams();
 
   let value = localStorage.getItem("mode") || "";
 
