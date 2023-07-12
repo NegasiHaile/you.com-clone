@@ -6,16 +6,12 @@ import { Icon } from "@/components/Utils";
 import { reasonsToUseYou } from "@/constants";
 import Link from "next/link";
 import { icons } from "@/assets/icons";
-import { redirect, useParams } from "next/navigation";
+import { redirect } from "next/navigation";
 
 export default function Home() {
   async function requestChat(data: FormData) {
     "use server";
-
     const prompit = data.get("chat")?.valueOf();
-
-    console.log("Boooom .... it works!", prompit);
-
     redirect(`/chat?prompit=${prompit}`);
   }
   return (

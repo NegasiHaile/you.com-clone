@@ -9,7 +9,7 @@ import "./styles/chat-page.css";
 
 import { Inter } from "next/font/google";
 
-import { Footer, NavBar } from "@/components";
+import { BottomBar, Footer, NavBar } from "@/components";
 import { usePathname } from "next/navigation";
 
 export const metadata = {
@@ -56,7 +56,10 @@ export default function RootLayout({
         <main className="mx-4 md:mx-8">{children}</main>
 
         {/* Footer */}
-        {pathname !== "/chat" && <Footer />}
+        {pathname !== "/chat" && (
+          <Footer className={`${pathname !== "/" ? `mb-24` : `mb-0`}`} />
+        )}
+        {/* {pathname !== "/" && <BottomBar />} */}
       </body>
     </html>
   );
