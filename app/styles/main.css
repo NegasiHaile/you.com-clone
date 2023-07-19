@@ -19,3 +19,8 @@
   line-height: 1.3rem /* 28px */;
   font-weight: 500;
 }
+
+/* ************** CHAT PAGE ************* */
+.chat_wrapper {
+  @apply w-full flex min-h-[calc(100vh_-_13rem)] md:min-h-[calc(100vh_-_11.25rem)];
+}

@@ -34,7 +34,7 @@ const BottomBar = ({ setShowModal, requestChat }: BottomBarProps) => {
 
         <div className="w-full">
           <form action={requestChat} className="relative">
-            <SearchInput iconName={icons.search} />
+            <SearchInput iconName={icons.send} />
           </form>
         </div>
 

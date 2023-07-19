@@ -4,38 +4,37 @@ import { icons } from "@/assets/icons";
 import { Icon } from "@/components/Utils";
 import Image from "next/image";
 import Link from "next/link";
+import { IconButton } from "@/components";
 
 const RelatedLinks = () => {
-  const [showChatLinks, setShowChatLinks] = useState<boolean>(false);
+  const [showRelatedLinks, setShowRelatedLinks] = useState<boolean>(false);
 
   return (
     <>
       {/* Slide Right and Left button */}
       <div className={`pt-5 relative`}>
-        <div
-          className="cursor-pointer rounded-full p-2 sticky top-[8.25rem] md:top-[100px] hover:bg-zinc-300 dark:hover:bg-zinc-700"
-          onClick={() => setShowChatLinks(!showChatLinks)}
-        >
-          <Icon name={showChatLinks ? icons.right : icons.left} />
-        </div>
+        <IconButton
+          iconName={showRelatedLinks ? icons.right : icons.left}
+          onClick={() => setShowRelatedLinks(!showRelatedLinks)}
+          iconStyle="w-4 h-4"
+        />
       </div>
 
       <div
         className={`border-l border-zinc-200 dark:border-zinc-700 min-h-[calc(100vh_-_7rem)]
-          bg-[var(--background-light)] dark:bg-[var(--background-dark)]
+          light-bg dark:dark-bg 
           ${
-            showChatLinks
+            showRelatedLinks
               ? `fixed w-4/6 top-28 right-0 z-30 md:static md:block md:z-0 md:w-[52%]`
               : `w-0 hidden`
           } transition-transform delay-1000`}
       >
         <div className="flex float-left w-auto bg-slate-300 mt-4 items-start bg-transparent -ml-9">
-          <div
-            className="visible md:invisible cursor-pointer h-auto p-2 block md:hidden bg-zinc-200 dark:bg-zinc-700 rounded-full"
-            onClick={() => setShowChatLinks(false)}
-          >
-            <Icon name={icons.right} className="w-4 h-4" />
-          </div>
+          <IconButton
+            iconName={icons.right}
+            onClick={() => setShowRelatedLinks(false)}
+            iconStyle="w-4 h-4"
+          />
         </div>
 
         {/* Links */}

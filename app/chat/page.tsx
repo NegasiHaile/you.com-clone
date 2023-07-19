@@ -30,7 +30,7 @@ const ChatPage = () => {
 
   return (
     <div className="relative">
-      <div className="w-full flex min-h-[calc(100vh_-_13rem)] md:min-h-[calc(100vh_-_11.25rem)]">
+      <div className="chat_wrapper">
         {/* Chat History  */}
         <ChatHistory />
 
