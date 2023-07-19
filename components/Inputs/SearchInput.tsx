@@ -38,7 +38,7 @@ const SearchInput = ({
         id="chat"
         name="chat"
         rows={numLines <= 5 ? numLines : 5}
-        className="input rounded-3xl resize-none no-scrollbar pr-12"
+        className="input rounded-3xl resize-none hide-scrollbar pr-12"
         placeholder="Start typing to search"
         required
         value={inputValue}

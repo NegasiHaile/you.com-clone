@@ -24,7 +24,7 @@ const BottomBar = ({ setShowModal, requestChat }: BottomBarProps) => {
         </Link>
       </div>
 
-      <div className="flex flex-row items-center space-x-2 md:space-x-5 w-full md:w-3/4 ">
+      <div className="w-full md:w-3/5 flex flex-row items-center space-x-2 md:space-x-5">
         <div
           className=" rounded-full bg-blue-600 p-3 cursor-pointer"
           // onClick={() => setChatHistory(initialChatHistory)}

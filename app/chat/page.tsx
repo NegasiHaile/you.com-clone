@@ -2,7 +2,6 @@ import React from "react";
 import ChatHistory from "./ChatHistory";
 import ChatBox from "./ChatBox";
 import RelatedLinks from "./RelatedLinks";
-import { BottomBar } from "@/components";
 
 // chatHistory : array of chat lists
 // conversation: array of convesation in a single chat
@@ -21,12 +20,12 @@ export interface IChatHistory {
 
 const ChatPage = () => {
   // Server function
-  async function requestChat(formDara: FormData) {
+  const requestChat = async (formDara: FormData) => {
     "use server";
 
     const prmpt = formDara.get("chat")?.valueOf();
     console.log("Prompit", prmpt);
-  }
+  };
 
   return (
     <div className="relative">
@@ -35,13 +34,11 @@ const ChatPage = () => {
         <ChatHistory />
 
         {/* Chat Conversation  */}
-        <ChatBox />
+        <ChatBox requestChat={requestChat} />
 
         {/* Chat related links  */}
         <RelatedLinks />
       </div>
-
-      <BottomBar requestChat={requestChat} />
     </div>
   );
 };

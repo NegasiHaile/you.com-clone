@@ -1,5 +1,5 @@
 .icon_button {
-  @apply rounded-full hover:bg-slate-300 dark:hover:bg-zinc-700 p-2;
+  @apply hover:bg-slate-300 dark:hover:bg-zinc-700 p-2;
 }
 
 .primary_button {

@@ -50,10 +50,15 @@ const NavBar = ({ darkMode, setDarkMode, currentPath }: NavBarProps) => {
       {/* Left part nav items */}
       <div className="header_left_content">
         <div className="header_left_mobile">
-          <IconButton iconName={icons.menu} onClick={() => {}} />
+          <IconButton
+            iconName={icons.menu}
+            onClick={() => {}}
+            className="rounded-full"
+          />
           <IconButton
             iconName={icons.upload}
             iconStyle="w-5 h-5"
+            className="rounded-full"
             onClick={() => {}}
           />
         </div>

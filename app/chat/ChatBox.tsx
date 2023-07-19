@@ -1,7 +1,9 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 import { chatHistory } from "@/constants";
+import { BottomBar } from "@/components";
 
 export interface IChatResponse {
   id?: number;
@@ -9,14 +11,15 @@ export interface IChatResponse {
   sources?: string[];
 }
 
-const Chatdiv = () => {
+interface chatBOxProps {
+  requestChat: (formDara: FormData) => void;
+}
+
+const ChatBox = ({ requestChat }: chatBOxProps) => {
+  const [chat, setChat] = useState([]);
   return (
     <div className="flex justify-center w-full bg-transparent">
-      <div
-        className={`space-y-5 overflow-y-auto w-[95%]
-            h-[calc(100vh_-_14.25)] md:h-[calc(100vh_-_12.5rem)] 
-            hide-scrollbar transition-all py-5`}
-      >
+      <div className={`chat_area hide-scrollbar`}>
         {chatHistory.map((item, index) => {
           if (item.role === "assistant") {
             return (
@@ -33,11 +36,12 @@ const Chatdiv = () => {
           }
         })}
       </div>
+      <BottomBar requestChat={requestChat} />
     </div>
   );
 };
 
-export default Chatdiv;
+export default ChatBox;
 
 const ResponseMessage = ({
   apiRequesting,

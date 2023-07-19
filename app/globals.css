@@ -13,15 +13,6 @@
 @layer utilities {
   @variants responsive {
     /* Hide scrollbar for Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-
-    /* Hide scrollbar for IE, Edge and Firefox */
-    .no-scrollbar {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
-    }
 
     .dark-bg {
       background: rgb(var(--background-dark));
@@ -33,6 +24,14 @@
   }
 }
 
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 .light {
   color: rgb(var(--foreground-light));
   background: rgb(var(--background-light));
@@ -44,18 +43,6 @@
 }
 
 /* Styles they can't be achieve using tailwind */
-
-/* hide-scrollbar is to hide the scroll bar while the scrolling feature is exist */
-.hide-scrollbar::-webkit-scrollbar {
-  /* For Webkit-based browsers (Chrome, Safari and Opera) */
-  display: none;
-}
-
-.hide-scrollbar {
-  /* For IE, Edge and Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
 
 .hide_arrow::-webkit-outer-spin-button,
 .hide_arrow::-webkit-inner-spin-button {
