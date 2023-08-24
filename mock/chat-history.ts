@@ -8,7 +8,7 @@ function generateUniqueId() {
 export const chatHostory = [
   {
     id: generateUniqueId(),
-    chatTitle: "Give me a JavaScript",
+    chatTitle: "What is Lesan.AI",
     createdAt: new Date(),
     updatedAt: new Date(),
     history: [
@@ -31,42 +31,6 @@ The company has also launched an Amharic translator for public use and recently 
 
 It appears that Lesan AI has made significant strides in improving access to information and breaking down language barriers using artificial intelligence technologies. However, there is not enough information to determine if Lesan.AI has launched any new product or service recently, other than the Tigrinya language addition.`,
         role: "assistant",
-      },
-    ],
-  },
-  {
-    id: generateUniqueId(),
-    chatTitle: "Give me a JavaScript",
-    createdAt: new Date(),
-    updatedAt: new Date(),
-    history: [
-      {
-        id: 1,
-        role: "assistant",
-        message: "Hey there! How can I be of assistance?",
-      },
-      {
-        id: 2,
-        role: "user",
-        message: "Give me a JavaScript code that returns sum of an array?",
-      },
-    ],
-  },
-  {
-    id: generateUniqueId(),
-    chatTitle: "What is chatGPT",
-    createdAt: new Date(),
-    updatedAt: new Date(),
-    history: [
-      {
-        id: 1,
-        role: "assistant",
-        message: "Hey there! How can I be of assistance?",
-      },
-      {
-        id: 2,
-        role: "user",
-        message: "WHat is ChatGPT and when it is launched?",
       },
     ],
   },
