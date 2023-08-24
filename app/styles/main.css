@@ -19,12 +19,3 @@
   line-height: 1.3rem /* 28px */;
   font-weight: 500;
 }
-
-/* ************** CHAT PAGE ************* */
-.chat_wrapper {
-  @apply w-full flex h-[calc(100vh_-_13rem)] md:h-[calc(100vh_-_11.25rem)];
-}
-
-.chat_area {
-  @apply space-y-5 overflow-y-auto w-[95%] h-full transition-all py-5;
-}

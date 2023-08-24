@@ -45,3 +45,16 @@ export interface TextInputProps {
   inputValue: string;
   onChange: any;
 }
+
+export interface Message {
+  id: string | number;
+  role: "assistant" | "user";
+  message: string;
+}
+export interface ChatProps {
+  id: string | number;
+  chatTitle: string;
+  createdAt: Date | string;
+  updatedAt: Date | string;
+  history: Message[];
+}

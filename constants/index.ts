@@ -98,35 +98,30 @@ export const leftNavItems = [
     title: "Chat",
     icon: icons.chat,
   },
+  // {
+  //   href: "/all",
+  //   title: "All",
+  //   icon: icons.search,
+  // },
   {
-    href: "/all",
-    title: "All",
-    icon: icons.search,
-  },
-  {
-    href: "/images",
-    title: "Images",
+    href: "/image",
+    title: "Image",
     icon: icons.image,
   },
   {
-    href: "/videos",
-    title: "Videos",
+    href: "/video",
+    title: "Video",
     icon: icons.video,
   },
   {
-    href: "/news",
-    title: "News",
+    href: "/question",
+    title: "Question",
+    icon: icons.image,
+  },
+  {
+    href: "/Writing",
+    title: "Writing",
     icon: icons.news,
-  },
-  {
-    href: "/maps",
-    title: "Maps",
-    icon: icons.map,
-  },
-  {
-    href: "/social",
-    title: "Social",
-    icon: icons.users,
   },
 ];
 
@@ -340,98 +335,5 @@ export const socialMediaLinks = [
     id: 5,
     icon: "/logo_round_linkedin.svg",
     href: "https://www.linkedin.com/in/negasi-h-abadi-173690210/",
-  },
-];
-
-export const chatHistory = [
-  {
-    text: "Greetings! What can I do for you today?",
-    role: "assistant",
-    res: {},
-  },
-  {
-    text: "What is Lesan.AI, and it is launched? Please give a detailed description about it.",
-    role: "user",
-  },
-
-  {
-    text: `From the search results, it seems that Lesan AI is a machine translation startup company that aims to provide fast, reliable and accurate translation services for low resource languages like Tigrinya, Amharic, and English. The company was founded with the objective of making information accessible for people who speak low-resource languages and to eliminate language barriers globally. Lesan AI has developed AI-powered tools and frameworks to support their translation services, leveraging natural language processing (NLP) techniques to improve accuracy and speed .
-
-The company has also launched an Amharic translator for public use and recently added Tigrinya to their language portfolio. Lesan AI has partnered with Timnit Gebru's AI research institute to study and develop open-source natural language processing for low-resource languages .
-
-It appears that Lesan AI has made significant strides in improving access to information and breaking down language barriers using artificial intelligence technologies. However, there is not enough information to determine if Lesan.AI has launched any new product or service recently, other than the Tigrinya language addition.`,
-    role: "assistant",
-  },
-  {
-    text: "Greetings! What can I do for you today?",
-    role: "assistant",
-    res: {},
-  },
-  {
-    text: "What is Lesan.AI, and it is launched? Please give a detailed description about it.",
-    role: "user",
-  },
-
-  {
-    text: `From the search results, it seems that Lesan AI is a machine translation startup company that aims to provide fast, reliable and accurate translation services for low resource languages like Tigrinya, Amharic, and English. The company was founded with the objective of making information accessible for people who speak low-resource languages and to eliminate language barriers globally. Lesan AI has developed AI-powered tools and frameworks to support their translation services, leveraging natural language processing (NLP) techniques to improve accuracy and speed .
-
-The company has also launched an Amharic translator for public use and recently added Tigrinya to their language portfolio. Lesan AI has partnered with Timnit Gebru's AI research institute to study and develop open-source natural language processing for low-resource languages .
-
-It appears that Lesan AI has made significant strides in improving access to information and breaking down language barriers using artificial intelligence technologies. However, there is not enough information to determine if Lesan.AI has launched any new product or service recently, other than the Tigrinya language addition.`,
-    role: "assistant",
-  },
-  {
-    text: "Greetings! What can I do for you today?",
-    role: "assistant",
-    res: {},
-  },
-  {
-    text: "What is Lesan.AI, and it is launched? Please give a detailed description about it.",
-    role: "user",
-  },
-
-  {
-    text: `From the search results, it seems that Lesan AI is a machine translation startup company that aims to provide fast, reliable and accurate translation services for low resource languages like Tigrinya, Amharic, and English. The company was founded with the objective of making information accessible for people who speak low-resource languages and to eliminate language barriers globally. Lesan AI has developed AI-powered tools and frameworks to support their translation services, leveraging natural language processing (NLP) techniques to improve accuracy and speed .
-
-The company has also launched an Amharic translator for public use and recently added Tigrinya to their language portfolio. Lesan AI has partnered with Timnit Gebru's AI research institute to study and develop open-source natural language processing for low-resource languages .
-
-It appears that Lesan AI has made significant strides in improving access to information and breaking down language barriers using artificial intelligence technologies. However, there is not enough information to determine if Lesan.AI has launched any new product or service recently, other than the Tigrinya language addition.`,
-    role: "assistant",
-  },
-  {
-    text: "Greetings! What can I do for you today?",
-    role: "assistant",
-    res: {},
-  },
-  {
-    text: "What is Lesan.AI, and it is launched? Please give a detailed description about it.",
-    role: "user",
-  },
-
-  {
-    text: `From the search results, it seems that Lesan AI is a machine translation startup company that aims to provide fast, reliable and accurate translation services for low resource languages like Tigrinya, Amharic, and English. The company was founded with the objective of making information accessible for people who speak low-resource languages and to eliminate language barriers globally. Lesan AI has developed AI-powered tools and frameworks to support their translation services, leveraging natural language processing (NLP) techniques to improve accuracy and speed .
-
-The company has also launched an Amharic translator for public use and recently added Tigrinya to their language portfolio. Lesan AI has partnered with Timnit Gebru's AI research institute to study and develop open-source natural language processing for low-resource languages .
-
-It appears that Lesan AI has made significant strides in improving access to information and breaking down language barriers using artificial intelligence technologies. However, there is not enough information to determine if Lesan.AI has launched any new product or service recently, other than the Tigrinya language addition.`,
-    role: "assistant",
-  },
-  {
-    text: "Greetings! What can I do for you today?",
-    role: "assistant",
-    res: {},
-  },
-  {
-    text: "What is Lesan.AI, and it is launched? Please give a detailed description about it.",
-    role: "user",
-  },
-
-  {
-    text: `From the search results, it seems that Lesan AI is a machine translation startup company that aims to provide fast, reliable and accurate translation services for low resource languages like Tigrinya, Amharic, and English. The company was founded with the objective of making information accessible for people who speak low-resource languages and to eliminate language barriers globally. Lesan AI has developed AI-powered tools and frameworks to support their translation services, leveraging natural language processing (NLP) techniques to improve accuracy and speed .
-
-The company has also launched an Amharic translator for public use and recently added Tigrinya to their language portfolio. Lesan AI has partnered with Timnit Gebru's AI research institute to study and develop open-source natural language processing for low-resource languages .
-
-It appears that Lesan AI has made significant strides in improving access to information and breaking down language barriers using artificial intelligence technologies. However, there is not enough information to determine if Lesan.AI has launched any new product or service recently, other than the Tigrinya language addition.`,
-    role: "assistant",
   },
 ];

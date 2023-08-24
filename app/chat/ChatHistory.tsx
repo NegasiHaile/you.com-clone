@@ -5,6 +5,8 @@ import { IconButton } from "@/components";
 import { Icon } from "@/components/Utils";
 import { useState } from "react";
 
+import { chatHostory } from "@/mock/chat-history";
+
 const ChatHistory = () => {
   const [showHistoryList, setHistoryList] = useState<boolean>();
   return (
@@ -17,12 +19,17 @@ const ChatHistory = () => {
         <p>History</p>
       </div>
 
-      <div
-        className="flex items-center cursor-pointer space-x-1 px-2 py-1 hover:bg-zinc-600 rounded-sm"
-        onClick={() => setHistoryList(!showHistoryList)}
-      >
-        <p>1, History</p>
-      </div>
+      {chatHostory.map((chat, index) => (
+        <button
+          key={index}
+          className="flex items-center space-x-1 px-2 py-1 hover:bg-zinc-600 rounded-sm text-start"
+          onClick={() => setHistoryList(!showHistoryList)}
+        >
+          <p>
+            {index + 1}, {chat.chatTitle}
+          </p>
+        </button>
+      ))}
     </div>
   );
 };

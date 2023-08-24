@@ -2,35 +2,43 @@
 import Link from "next/link";
 import React, { useState } from "react";
 
-import { chatHistory } from "@/constants";
+// components
 import { BottomBar } from "@/components";
+
+// mock-data
+import { chatHostory } from "@/mock/chat-history";
+import { ChatProps } from "@/types";
 
 export interface IChatResponse {
   id?: number;
-  text: string;
+  message: string;
   sources?: string[];
 }
 
 interface chatBOxProps {
+  chatHistory: ChatProps[];
   requestChat: (formDara: FormData) => void;
 }
 
-const ChatBox = ({ requestChat }: chatBOxProps) => {
-  const [chat, setChat] = useState([]);
+const ChatBox = ({ requestChat, chatHistory }: chatBOxProps) => {
+  const [chat, setChat] = useState(chatHistory[0].history);
+
+  console.log("chatHistory", chatHistory);
+
   return (
     <div className="flex justify-center w-full bg-transparent">
       <div className={`chat_area hide-scrollbar`}>
-        {chatHistory.map((item, index) => {
+        {chat.map((item, index) => {
           if (item.role === "assistant") {
             return (
               <div key={index} className="flex w-full">
-                <ResponseMessage text={item.text} />
+                <ResponseMessage message={item.message} />
               </div>
             );
           } else {
             return (
               <div key={index} className="flex justify-end">
-                <RequestMessage text={item.text} />{" "}
+                <RequestMessage message={item.message} />
               </div>
             );
           }
@@ -45,19 +53,19 @@ export default ChatBox;
 
 const ResponseMessage = ({
   apiRequesting,
-  text,
+  message,
   res,
 }: {
   apiRequesting?: boolean;
   key?: number;
-  text?: string;
+  message?: string;
   res?: IChatResponse;
 }) => {
   return (
-    <div className="rounded-t-3xl flex flex-col flex-wrap whitespace-break-spaces text-sm rounded-br-3xl bg-slate-200 bg-opacity-70 leading-relaxed dark:bg-zinc-700 dark:bg-opacity-50 font-semibold py-2 px-4 mr-2 ">
+    <div className="chat_response_container">
       {/* <p>{text ? text : res?.text}</p> */}
       {/* <PrismComponent language="python"> */}
-      {`${text ? text : res?.text}`}
+      {`${message ? message : res?.message}`}
       {/* </PrismComponent> */}
 
       {res?.sources?.length !== undefined && res?.sources?.length >= 1 && (
@@ -82,10 +90,10 @@ const ResponseMessage = ({
   );
 };
 
-const RequestMessage = ({ text }: { text?: string }) => {
+const RequestMessage = ({ message }: { message?: string }) => {
   return (
-    <div className="rounded-t-3xl whitespace-break-spaces text-slate-50 rounded-bl-3xl bg-blue-500 py-2 px-4 ml-2">
-      <p className="text-sm">{text}</p>
+    <div className="chat_request_container">
+      <p className="text-sm">{message}</p>
     </div>
   );
 };
