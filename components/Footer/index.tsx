@@ -6,11 +6,17 @@ import Link from "next/link";
 import { Button, TextInput } from "../";
 import Image from "next/image";
 
-const Footer = () => {
+type fType = {
+  className: string;
+};
+
+const Footer = ({ className }: fType) => {
   const [inputValue, setInputValue] = useState("");
 
   return (
-    <div className="flex flex-col items-center sm:items-stretch sm:flex-row sm:justify-around border-t py-6 mt-10 border-slate-200 dark:border-zinc-700">
+    <div
+      className={`flex flex-col items-center sm:items-stretch sm:flex-row sm:justify-around border-t py-6 mt-10 border-slate-200 dark:border-zinc-700/40 ${className}`}
+    >
       <div className="flex justify-around space-x-3 p-5">
         {footerLinks.map((catagory) => (
           <div
@@ -35,7 +41,7 @@ const Footer = () => {
         ))}
       </div>
 
-      <div className="flex flex-col py-5 sm:pt-0 sm:mt-0 border-t sm:border-t-0 sm:border-l dark:border-zinc-700 sm:pl-10 pr-2 items-center sm:items-start">
+      <div className="flex flex-col py-5 sm:pt-0 sm:mt-0 border-t sm:border-t-0 sm:border-l dark:border-zinc-700/40 sm:pl-10 pr-2 items-center sm:items-start">
         <p className=" landing_header text-sm"> Subscribe to our newsletter </p>
         <p className="text-zinc-400">
           Get latest news and updates about you.com

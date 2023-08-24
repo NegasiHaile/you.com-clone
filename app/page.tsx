@@ -1,17 +1,55 @@
 import Image from "next/image";
 
-import { Hero, Footer } from "@/components";
+import { SearchInput } from "@/components";
 import { Icon } from "@/components/Utils";
 
 import { reasonsToUseYou } from "@/constants";
+import Link from "next/link";
+import { icons } from "@/assets/icons";
+import { redirect } from "next/navigation";
 
 export default function Home() {
+  async function requestChat(data: FormData) {
+    "use server";
+    const prompit = data.get("chat")?.valueOf();
+    redirect(`/chat?prompit=${prompit}`);
+  }
   return (
-    <main className="">
+    <main className="md:mx-8">
       {/* HERO section */}
-      <Hero />
-      {/* Why You.com? */}
+      <div className="hero_section">
+        <Image
+          src="/you-logo.svg"
+          alt="You.com Logo"
+          className=" text-gray-800 dark:text-white"
+          width={240}
+          height={150}
+          priority
+        />
+        <h1 className="text-xl md:text-3xl my-5 text-center">
+          The AI search engine you control
+        </h1>
+        <div className="w-full md:w-4/6 lg:w-1/2 mt-5">
+          <form action={requestChat} className="relative">
+            <SearchInput iconName={icons.search} />
+          </form>
+        </div>
+        {/* THis empty <div> element, allows to fill the remaining 
+      vertical space within the flex container */}
+        <div className="flex-grow"></div>
 
+        <div className="flex flex-col items-center">
+          <Link href={"#why-you"}>
+            <Icon
+              name={icons.downward}
+              className="w-20 h-20"
+              strokeWidth={1.3}
+            />
+          </Link>
+        </div>
+      </div>
+
+      {/* WHY YOU.COM? Section*/}
       <div id="why-you" className="pb-10 pt-28 flex flex-col items-center ">
         <p className="landing_header text-3xl mb-5 ">Why You.com?</p>
 

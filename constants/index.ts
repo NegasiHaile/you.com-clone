@@ -98,35 +98,30 @@ export const leftNavItems = [
     title: "Chat",
     icon: icons.chat,
   },
+  // {
+  //   href: "/all",
+  //   title: "All",
+  //   icon: icons.search,
+  // },
   {
-    href: "/all",
-    title: "All",
-    icon: icons.search,
-  },
-  {
-    href: "/images",
-    title: "Images",
+    href: "/image",
+    title: "Image",
     icon: icons.image,
   },
   {
-    href: "/videos",
-    title: "Videos",
+    href: "/video",
+    title: "Video",
     icon: icons.video,
   },
   {
-    href: "/news",
-    title: "News",
+    href: "/question",
+    title: "Question",
+    icon: icons.image,
+  },
+  {
+    href: "/Writing",
+    title: "Writing",
     icon: icons.news,
-  },
-  {
-    href: "/maps",
-    title: "Maps",
-    icon: icons.map,
-  },
-  {
-    href: "/social",
-    title: "Social",
-    icon: icons.users,
   },
 ];
 
@@ -230,7 +225,7 @@ export const footerLinks = [
         target: "_blank",
       },
       {
-        id: 2,
+        id: 1,
         title: "Join Community",
         href: "http://you.club/",
         target: "_blank",
@@ -257,7 +252,7 @@ export const footerLinks = [
   },
 
   {
-    id: 1,
+    id: 2,
     header: "Features",
     items: [
       {
@@ -266,7 +261,7 @@ export const footerLinks = [
         href: "https://about.you.com/youchat/",
       },
       {
-        id: 2,
+        id: 1,
         title: "YouPro",
         href: "https://about.you.com/youpro/",
       },
@@ -332,12 +327,12 @@ export const socialMediaLinks = [
     href: "https://www.reddit.com/r/YouSearch/",
   },
   {
-    id: 3,
+    id: 4,
     icon: "/logo_round_twitter.svg",
     href: "https://twitter.com/Negasihaile3",
   },
   {
-    id: 3,
+    id: 5,
     icon: "/logo_round_linkedin.svg",
     href: "https://www.linkedin.com/in/negasi-h-abadi-173690210/",
   },

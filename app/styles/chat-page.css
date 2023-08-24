@@ -1,0 +1,14 @@
+/* ************** CHAT PAGE ************* */
+.chat_page_wrapper {
+  @apply w-full flex h-[calc(100vh_-_13rem)] md:h-[calc(100vh_-_11.25rem)];
+}
+.chat_area {
+  @apply space-y-5 overflow-y-auto w-[95%] h-full transition-all py-5;
+}
+
+.chat_request_container {
+  @apply rounded-t-3xl whitespace-break-spaces text-slate-50 rounded-bl-3xl bg-blue-500 py-2 px-4 ml-2;
+}
+.chat_response_container {
+  @apply rounded-t-3xl flex flex-col flex-wrap whitespace-break-spaces text-sm rounded-br-3xl bg-slate-200 bg-opacity-70 leading-relaxed dark:bg-zinc-700 dark:bg-opacity-50 font-semibold py-2 px-4 mr-2;
+}

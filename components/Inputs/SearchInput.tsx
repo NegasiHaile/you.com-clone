@@ -1,24 +1,24 @@
 "use client";
-import React, { useRef, useState, ChangeEvent } from "react";
+import React, { useEffect, useRef, useState, ChangeEvent } from "react";
+import { useSearchParams } from "next/navigation";
 
 import { SearchInputProps } from "@/types";
 import { Icon } from "../Utils";
 
-type InputProps = SearchInputProps & {
-  inputValue: string;
-  setInputValue: React.Dispatch<React.SetStateAction<string>>;
-};
-
 const SearchInput = ({
-  inputValue,
-  setInputValue,
   iconName,
-  className,
   iconContainerStyle,
   onClickSendButton,
-}: InputProps) => {
+}: SearchInputProps) => {
+  const searchParams = useSearchParams();
+  const [inputValue, setInputValue] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [numLines, setNumLines] = useState<number>(1);
+
+  useEffect(() => {
+    const prmpt = searchParams.get("prompit");
+    if (!!prmpt) setInputValue(prmpt);
+  }, []);
 
   const handleInputChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     if (textareaRef.current) {
@@ -28,17 +28,17 @@ const SearchInput = ({
 
       setNumLines(nLines);
     }
-
     setInputValue(event.target.value);
   };
 
   return (
-    <div className="relative">
+    <>
       <textarea
         ref={textareaRef}
         id="chat"
+        name="chat"
         rows={numLines <= 5 ? numLines : 5}
-        className="input rounded-3xl resize-none no-scrollbar pr-12"
+        className="input rounded-3xl resize-none hide-scrollbar pr-12"
         placeholder="Start typing to search"
         required
         value={inputValue}
@@ -54,14 +54,14 @@ const SearchInput = ({
       {/* <textarea className="resize-none w-full h-40 p-2 border-4 border-red-500 focus:border-blue-800 focus:outline-none"></textarea> */}
 
       <button
+        type="submit"
         className={`input_end_button ${
           inputValue ? "active_button" : "disabled_button"
         } ${iconContainerStyle}`}
-        onClick={!!inputValue ? onClickSendButton : () => {}}
       >
         {iconName && <Icon name={iconName} />}
       </button>
-    </div>
+    </>
   );
 };
 

@@ -5,11 +5,12 @@ import "./styles/layout.css";
 import "./styles/buttons.css";
 import "./styles/inputs.css";
 import "./styles/main.css";
+import "./styles/chat-page.css";
 
 import { Inter } from "next/font/google";
 
-import { Footer, NavBar } from "@/components";
-import { usePathname, useSearchParams } from "next/navigation";
+import { BottomBar, Footer, NavBar } from "@/components";
+import { usePathname } from "next/navigation";
 
 export const metadata = {
   title: "You.com-clone",
@@ -24,7 +25,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  // const searchParams = useSearchParams();
 
   let value = localStorage.getItem("mode") || "";
 
@@ -53,10 +53,13 @@ export default function RootLayout({
         />
 
         {/* Main content */}
-        <main className="mx-4 md:mx-16">{children}</main>
+        <main className="mx-4 md:mx-8">{children}</main>
 
         {/* Footer */}
-        {pathname !== "/chat" && <Footer />}
+        {pathname !== "/chat" && (
+          <Footer className={`${pathname !== "/" ? `mb-24` : `mb-0`}`} />
+        )}
+        {/* {pathname !== "/" && <BottomBar />} */}
       </body>
     </html>
   );
